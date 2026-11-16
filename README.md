@@ -26,6 +26,21 @@ Das Skript ruft alle Meldungen seit 02/2022 über die Open311-Schnittstelle ab u
 
 Die Schnittstelle gibt pro Anfrage höchstens 1.000 Meldungen zurück und ignoriert Paging-Parameter. Der Client fragt deshalb monatsweise ab und halbiert ein Zeitfenster so lange, bis es weniger als 1.000 Treffer enthält.
 
+## Vorverarbeitung
+
+```bash
+python -m maengelmelder.preprocess
+```
+
+Schreibt `data/processed/requests_clean.csv` mit einer Spalte `tokens` (Lemmata, durch Leerzeichen getrennt). Die Schritte:
+
+1. Reguläre Ausdrücke entfernen URLs, E-Mail-Adressen, Postleitzahlen, Straßennamen mit Hausnummer und Grußformeln.
+2. Texte, die danach identisch sind, werden nur einmal behalten.
+3. spaCy (`de_core_news_sm`) tokenisiert und bestimmt die Wortart. Behalten werden Substantive, Adjektive und Verben ohne Stoppwörter.
+4. `simplemma` bildet die Grundform. Die spaCy-Modelle lemmatisieren deutsche Plurale unzuverlässig („Laternen“ → „Latern“).
+5. Die Lemmata werden kleingeschrieben. Eine eigene Stoppwortliste entfernt Wörter ohne Thema („bitte“, „siehe“, „Ecke“, „Woche“).
+6. Meldungen mit weniger als drei Lemmata entfallen.
+
 ## Tests
 
 ```bash
