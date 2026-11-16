@@ -41,6 +41,14 @@ Schreibt `data/processed/requests_clean.csv` mit einer Spalte `tokens` (Lemmata,
 5. Die Lemmata werden kleingeschrieben. Eine eigene Stoppwortliste entfernt Wörter ohne Thema („bitte“, „siehe“, „Ecke“, „Woche“).
 6. Meldungen mit weniger als drei Lemmata entfallen.
 
+## Vektorisierung
+
+```bash
+python -m maengelmelder.vectorize
+```
+
+Erzeugt aus den Lemmata eine Bag-of-Words- und eine TF-IDF-Matrix mit denselben Einstellungen: Unigramme und Bigramme, `min_df=5`, `max_df=0.5`. Ausgegeben werden die Größe des Vokabulars, die stärksten Begriffe beider Verfahren und die Begriffe, deren Rang sich durch die TF-IDF-Gewichtung am stärksten verschiebt.
+
 ## Tests
 
 ```bash

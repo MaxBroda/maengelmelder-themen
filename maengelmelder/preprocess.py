@@ -52,7 +52,7 @@ class Lemmatizer:
         "liegen", "geben", "stehen", "befinden", "lassen", "stellen", "bestehen",
         "seit", "mal", "schon", "leider", "wieder", "immer", "gerade", "heute",
         "ecke", "höhe", "richtung", "bereich", "stelle", "seite", "ort", "gesamt",
-        "tag", "woche", "monat", "jahr",
+        "tag", "woche", "monat", "jahr", "gruß",
     })
     CONTENT_POS = frozenset({"NOUN", "ADJ", "VERB"})
 
