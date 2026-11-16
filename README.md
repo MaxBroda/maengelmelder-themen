@@ -66,7 +66,24 @@ Trainiert LDA (auf Bag-of-Words) und NMF (auf TF-IDF) für k = 4, 6, …, 30. Je
 
 Die Themenmodelle arbeiten nur mit Einzelwörtern. Mit Bigrammen füllen Varianten wie „laterne defekt“ und „defekt laterne“ die Top-Wörter und treiben die Kohärenz künstlich hoch.
 
-Ergebnis: `results/k_selection.csv` und `results/k_selection.png`.
+Ergebnis: `results/k_selection.csv` und `results/k_selection.png`. Gewählt wurde NMF mit k = 10. Bei k = 8–10 sind Kohärenz und Stabilität am höchsten, ab k = 12 fällt die Kohärenz deutlich. Gegenüber k = 8 trennt k = 10 Sperrmüll und Wertstoffcontainer als eigene Themen ab.
+
+## Themen und Unterthemen
+
+```bash
+python -m maengelmelder.analyze
+```
+
+Trainiert NMF und LDA mit k = 10 auf allen Meldungen. Laufzeit: etwa 30 Sekunden. Ergebnisse in `results/`:
+
+| Datei | Inhalt |
+|---|---|
+| `topics_nmf.csv`, `topics_lda.csv` | Anteil, Top-Wörter und Beispielmeldungen je Thema |
+| `crosstab_nmf.csv`, `crosstab_nmf.png` | Anteil der NMF-Themen je `service_name` |
+| `subtopics.csv` | Unterthemen je Kategorie (NMF, Kategorien ab 500 Meldungen) |
+| `subtopics_k.csv` | Kennzahlen zur Wahl von k je Kategorie |
+
+Für die Unterthemen gilt dieselbe Logik wie bei den Hauptthemen: Unter den k = 2–8 mit einer Stabilität von mindestens 0,75 zählt die höchste Kohärenz c_v. Erreicht kein k die Schwelle, wird das stabilste k genommen und die Kategorie als `stabil = False` markiert.
 
 ## Tests
 

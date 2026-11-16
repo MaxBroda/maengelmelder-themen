@@ -1,0 +1,23 @@
+Kategorie,stabil,Thema,Anteil,Top-Wörter,Beispiele
+Defekte Straßenlaterne,True,1,0.381,laterne leuchten nummer flackern defekt straße reparieren haus,Auf Höhe Bischofsweg 32 ist das Laternenleuchtmittel AUS. Es ist die zweite Laterne ab Alaunstraße westwärts. Es ist ein DVB-Mast mit Fahrl…
+Defekte Straßenlaterne,True,0,0.348,straßenlaterne defekt reparatur hausnummer haus reparieren leuchten grundstück,Defekte Straßenlaterne Troppauer Str. / Flurstück 148/e
+Defekte Straßenlaterne,True,2,0.272,straßenbeleuchtung ausfallen straße beleuchtung komplett funktionieren reparatur lampe,"Sehr geehrte Damen und Herren, in Schönborn (gesamte Ortschaft) und zum Teil in Langebrück (Bereich Kirch- und Hauptstraße) ist ebenfalls d…"
+Fahrzeugwrack,True,0,0.653,kennzeichen fahrzeug abstellen parkplatz öffentlich auto bewegen straße,In Dresden Klotzsche steht im Nesselgrundweg ( an der Königsbrücker Landstraße) ein entstempeltes Fahrzeug. Zudem ist eine Seitenscheibe ge…
+Fahrzeugwrack,True,1,0.347,fahrrad anschließen rad blockieren fahrradständer defekt herrenlos bewegen,"Dieses Fahrrad steht hier schon kaputt seit Dezember 2023. Nachdem einiges abgebaut wurde, wird es zwar immer leichter, es stört dennoch. B…"
+Illegale Müllablagerung,True,0,0.78,gehweg müll abstellen sperrmüll entsorgen entsorgt alt entsorgung,Sperrmüll und Müll auf dem Gehweg Hechtstraße Ecke Fichtenstraße illegal abgestellt. Bitte bitte entsorgen. Danke.
+Illegale Müllablagerung,True,1,0.22,illegal ablagerung müllablagerung beseitigung sperrmüll divers unrat müllsack,Illegale Ablagerung von Matratzenteilen Hans-Jüchser-Straße Bitte um Beräumung! Danke
+Sonstiges,True,0,0.737,gehweg straße fußweg baum fußgänger weg radweg baustelle,Die Fußwege und Straßen in der Südvorstadt-West sehen seit JAHREN desolat aus! (Bild Rugestr.) Bitte umgehend Sanieren! Danke.
+Sonstiges,True,3,0.104,kreuzung bordstein absenken poller sperrfläche ampel koordinate schule,Bordsteine an Kreuzung sind leider viel zu hoch. Bitte absenken für Groß und Klein. Heute war die Kreuzung wieder zugeparkt. Danke
+Sonstiges,True,2,0.096,hängen wahlplakat plakat baum partei haltestelle markieren ast,Auf der Tolkewitzer Straße im gesamten Bereich Johannisfriedhof hängen mind. 5 Wahlplakate von Hr. Hilbert. Auf der Wehlener Straße im gesa…
+Sonstiges,True,1,0.063,schlagloch tief straße fahrbahn entstehen flicken loch ausbessern,Schlagloch Omsewitzer Ring in Nähe Nr.35 —kommend von der Hain - buchenstraße.
+Vandalismus,False,0,0.783,schild straße fehlen spielplatz baum zerstören beschädigen kreuzung,Kein Schild hier benennt die Straße.
+Vandalismus,False,1,0.217,beschmiert beklebt verkehrszeichen markieren reinigen reinigung aufkleber zusatzzeichen,Am markierten Ort wurde das Verkehrszeichen 209 beklebt/beschmiert. Bitte reinigen. Vielen Dank.
+Verschmutzte Grundstücke,False,1,0.657,müll spielplatz glasscherbe wiese reinigung haltestelle grünfläche kind,Neben den Glascontainern wird immer mehr Müll abgeworfen.
+Verschmutzte Grundstücke,False,0,0.343,grundstück fußweg gehweg wachsen straße anliegerpflicht baum laub,Strauchbewuchs durch die Gartenzäune auf die Fußwege Speziell Grundstücke Friedrich-August-Straße 15-21.
+Verschmutzte Straßen,True,1,0.789,gehweg straße fußweg laub reinigung müll verschmutzt anliegerpflicht,Auf dem Rudolf-Bergandering befindet sich immer wieder zerkleinertes Styropor auf Straße und Gehweg
+Verschmutzte Straßen,True,0,0.211,glasscherbe radweg gefahrenstelle haltestelle weg verteilen elbradweg scherbe,Auf diesem separaten Radweg befinden sich leider Glasscherben.
+Verschmutzte Wertstoffcontainerplätze,False,1,0.43,altkleidercontainer glascontainer ablagerung leeren nebenablagerung illegal straße papiercontainer,"Neben den Weißglas-Container wurde ein Altkleidercontainer gestellt, welcher einseitig den Einwurf des Glascontainers verhindert!"
+Verschmutzte Wertstoffcontainerplätze,False,0,0.356,container pappe papier leeren leerung altkleider glas kleidung,"Waschmaschine, große Glasscheiben auf Container etc."
+Verschmutzte Wertstoffcontainerplätze,False,2,0.214,müll entsorgen wertstoffcontainerstellplatz standort sperrmüll wertstoffcontainer entsorgt container,"Hallo, An dem Altkleider-Container am Penny steht ein Einkaufswagen von Penny. Dieser ist mit Müll befüllt. Bitte entsorgen. Danke"
+Überfüllter Papierkorb,False,1,0.74,papierkorb müll abfallbehälter behälter container leer haltestelle groß,Die Papierkörbe an den Parkbänken sind seit Tagen überfüllt. Inzwischen wird der Müll daneben geworfen.
+Überfüllter Papierkorb,False,0,0.26,mülleimer spielplatz überfüllen müll haltestelle leerung verteilen park,Wieder überall nur Müll!!! Bitte überdenken sie ihr abfallkonzept. Wir fordern massive Investitionen in Mülleimer!

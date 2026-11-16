@@ -57,7 +57,7 @@ def lda_spec(bow: DocumentTermMatrix, max_iter: int = 20) -> TopicModelSpec:
     )
 
 
-def nmf_spec(tfidf: DocumentTermMatrix, max_iter: int = 400) -> TopicModelSpec:
+def nmf_spec(tfidf: DocumentTermMatrix, max_iter: int = 1000) -> TopicModelSpec:
     return TopicModelSpec(
         "NMF",
         tfidf,
@@ -96,6 +96,8 @@ class TopicEvaluator:
         return len(set(terms)) / len(terms)
 
     def nmi(self, topics: FittedTopics) -> float:
+        if not self._labelled.any():
+            return float("nan")
         return float(
             normalized_mutual_info_score(self._labels[self._labelled], topics.dominant_topic()[self._labelled])
         )
