@@ -13,6 +13,7 @@ from zoneinfo import ZoneInfo
 import pandas as pd
 import requests
 
+from maengelmelder.export import write_csv
 from maengelmelder.open311 import Open311Client, TimeWindow
 
 BERLIN = ZoneInfo("Europe/Berlin")
@@ -34,7 +35,7 @@ def main() -> None:
     frame = frame.sort_values("requested_datetime").reset_index(drop=True)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    frame.to_csv(args.out, index=False)
+    write_csv(frame, args.out)
     print(f"{len(frame)} Meldungen ({period.start:%Y-%m-%d} bis {period.end:%Y-%m-%d}) -> {args.out}")
 
 

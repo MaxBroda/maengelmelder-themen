@@ -82,6 +82,9 @@ Trainiert NMF und LDA mit k = 10 auf allen Meldungen. Laufzeit: etwa 30 Sekunden
 | `crosstab_nmf.csv`, `crosstab_nmf.png` | Anteil der NMF-Themen je `service_name` |
 | `subtopics.csv` | Unterthemen je Kategorie (NMF, Kategorien ab 500 Meldungen) |
 | `subtopics_k.csv` | Kennzahlen zur Wahl von k je Kategorie |
+| `results.xlsx` | alle Tabellen aus `results/` als Blätter einer Excel-Datei, auch `k_selection` |
+
+Die CSV-Dateien sind UTF-8 mit BOM und kommagetrennt. Für Excel ist `results.xlsx` gedacht: Ein deutsches Excel erwartet in CSV-Dateien Semikolons und zeigt sie sonst in einer einzigen Spalte an.
 
 Für die Unterthemen gilt dieselbe Logik wie bei den Hauptthemen: Unter den k = 2–8 mit einer Stabilität von mindestens 0,75 zählt die höchste Kohärenz c_v. Erreicht kein k die Schwelle, wird das stabilste k genommen und die Kategorie als `stabil = False` markiert.
 

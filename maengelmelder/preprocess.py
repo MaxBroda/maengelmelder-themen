@@ -15,6 +15,8 @@ import simplemma
 import spacy
 from spacy.language import Language
 
+from maengelmelder.export import write_csv
+
 _STREET_SUFFIX = r"(?i:straße|strasse|str\.|gasse|allee|ufer)"
 _PLACE_SUFFIX = r"(?i:weg|platz|ring|damm|markt)"
 
@@ -119,7 +121,7 @@ def main() -> None:
     clean = preprocessor.run(raw)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    clean.to_csv(args.out, index=False)
+    write_csv(clean, args.out)
     print(f"{len(raw)} Meldungen -> {len(clean)} nach Bereinigung -> {args.out}")
 
 

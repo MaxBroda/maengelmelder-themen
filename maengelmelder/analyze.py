@@ -5,6 +5,7 @@
 - topics_nmf.csv, topics_lda.csv: Anteil, Top-Wörter und Beispielmeldungen je Thema
 - crosstab_nmf.csv/.png: Verteilung der NMF-Themen je service_name
 - subtopics.csv, subtopics_k.csv: Unterthemen je Kategorie (NMF) und die Kennzahlen zur Wahl ihres k
+- results.xlsx: alle Tabellen zusätzlich als Blätter einer Excel-Datei
 """
 
 from __future__ import annotations
@@ -19,6 +20,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from maengelmelder.export import ResultWriter
 from maengelmelder.select_k import KSelection
 from maengelmelder.topics import FittedTopics, TopicEvaluator, lda_spec, nmf_spec
 from maengelmelder.vectorize import CorpusVectorizer
@@ -109,6 +111,7 @@ def main() -> None:
     parser.add_argument("--k", type=int, default=10)
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
+    writer = ResultWriter(args.out)
 
     corpus = pd.read_csv(args.clean)
     documents = corpus["tokens"].tolist()
@@ -118,17 +121,17 @@ def main() -> None:
 
     for name, topics in [("nmf", nmf), ("lda", lda)]:
         table = topic_table(topics, corpus["description"])
-        table.to_csv(args.out / f"topics_{name}.csv", index=False)
+        writer.write(table, f"topics_{name}")
         print(f"\n{name.upper()} (k={args.k})\n" + table[["Thema", "Anteil", "Top-Wörter"]].to_string(index=False))
 
     crosstab = pd.crosstab(corpus["service_name"], nmf.dominant_topic(), normalize="index")
-    crosstab.to_csv(args.out / "crosstab_nmf.csv")
+    writer.write(crosstab, "crosstab_nmf", index=True)
     labels = [f"{t}: {' '.join(terms)}" for t, terms in enumerate(nmf.top_terms(3))]
     plot_crosstab(crosstab, labels, args.out / "crosstab_nmf.png")
 
     subtopics, metrics = SubtopicAnalysis().run(corpus)
-    subtopics.to_csv(args.out / "subtopics.csv", index=False)
-    metrics.to_csv(args.out / "subtopics_k.csv", index=False)
+    writer.write(subtopics, "subtopics")
+    writer.write(metrics, "subtopics_k")
     print("\nUnterthemen je Kategorie\n" + subtopics[["Kategorie", "Thema", "Anteil", "Top-Wörter"]].to_string(index=False))
 
 

@@ -20,6 +20,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from maengelmelder.export import ResultWriter
 from maengelmelder.topics import TopicEvaluator, TopicModelSpec, lda_spec, nmf_spec, subsample
 from maengelmelder.vectorize import CorpusVectorizer
 
@@ -95,7 +96,7 @@ def main() -> None:
 
     args.out.mkdir(parents=True, exist_ok=True)
     results = pd.DataFrame(rows)
-    results.to_csv(args.out / "k_selection.csv", index=False)
+    ResultWriter(args.out).write(results, "k_selection")
     plot(results, args.out / "k_selection.png")
     print(f"-> {args.out / 'k_selection.csv'}, {args.out / 'k_selection.png'}")
 

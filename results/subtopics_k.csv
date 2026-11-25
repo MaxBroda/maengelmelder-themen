@@ -1,4 +1,4 @@
-Kategorie,model,k,c_v,c_npmi,stability,diversity,gewählt
+﻿Kategorie,model,k,c_v,c_npmi,stability,diversity,gewählt
 Defekte Straßenlaterne,NMF,2,0.25739605926977904,-0.004529314198352051,0.8838383838383838,0.66,False
 Defekte Straßenlaterne,NMF,3,0.28388326480421444,-0.014420671605631749,0.8653198653198654,0.648888888888889,True
 Defekte Straßenlaterne,NMF,4,0.2770579889123356,-0.041618923503296656,0.7977577977577978,0.6233333333333334,False
